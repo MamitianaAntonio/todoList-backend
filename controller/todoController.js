@@ -6,7 +6,21 @@ const getTodos = (_req, res) => {
   res.json(todos);
 };
 
-const addTodo = () => {};
+// add to do to the json file
+const addTodo = (req, res) => {
+  const { text } = req.body;
+
+  if (!text || !text.trim()) {
+    return res.status(400).json({ message: "The todo text is required" });
+  }
+
+  const todos = readTodos();
+  const newTodo = { id: Date.now(), text: text.trim(), done: false };
+  todos.todos.push(newTodo);
+  writeTodos(todos);
+
+  res.status(201).json(newTodo);
+};
 
 const toogleTodo = () => {};
 
