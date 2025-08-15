@@ -14,18 +14,16 @@ Backend for a simple Todo List application using **Express.js** with todos store
 ---
 
 ## **Project Structure**
-
 backend/
-│
 ├── controllers/
-│ └── todoController.js # Handles the logic for todos
+│ └── todoController.js 📝 Handles the logic for todos
 ├── routes/
-│ └── todoRoutes.js # Defines API routes
+│ └── todoRoutes.js 🚀 Defines API endpoints
 ├── utils/
-│ └── fileUtils.js # Functions to read/write todos.json
-├── todos.json # JSON file storing todos
-├── server.js # Entry point of the server
-└── .gitignore # Git ignore file
+│ └── fileUtils.js ⚙️ Helper functions to read/write todos.json
+├── todos.json 📄 JSON file storing todos
+├── server.js 🔑 Entry point of the server
+└── .gitignore 🚫 Git ignore file
 
 ---
 
