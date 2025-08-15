@@ -37,4 +37,16 @@ export const toogleTodo = (req, res) => {
   res.json(todo);
 };
 
-const deleteTodo = () => {};
+// delete todo by finding id
+export const deleteTodo = (req, res) => {
+  const { id } = req.params;
+  const todosData = readTodos();
+  const newTodos = todosData.todos.filter((t) => t.id !== Number(id));
+
+  if (newTodos.length === todosData.todos.length) {
+    return res.status(404).json({ message: "Todo not found" });
+  }
+
+  writeTodos(newTodos);
+  res.json({ message: "Todo deleted successfully" });
+};
