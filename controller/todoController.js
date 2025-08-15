@@ -22,6 +22,19 @@ export const addTodo = (req, res) => {
   res.status(201).json(newTodo);
 };
 
-export const toogleTodo = () => {};
+// toogle todo done or not (boolean)
+export const toogleTodo = (req, res) => {
+  const { id } = req.params;
+  const todosData = readTodos();
+  const todo = todosData.todos.find((t) => t.id === Number(id));
+
+  if (!todo) {
+    return res.status(404).json({ message: "Todo not found" });
+  }
+
+  todo.done = !todo.done;
+  writeTodos(todosData);
+  res.json(todo);
+};
 
 const deleteTodo = () => {};
