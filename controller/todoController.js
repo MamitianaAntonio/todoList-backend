@@ -1,13 +1,13 @@
 import { readTodos, writeTodos } from "../utils/fileUtils.js";
 
 // get all todos in the json file
-const getTodos = (_req, res) => {
+export const getTodos = (_req, res) => {
   const todos = readTodos();
   res.json(todos);
 };
 
 // add to do to the json file
-const addTodo = (req, res) => {
+export const addTodo = (req, res) => {
   const { text } = req.body;
 
   if (!text || !text.trim()) {
@@ -22,6 +22,6 @@ const addTodo = (req, res) => {
   res.status(201).json(newTodo);
 };
 
-const toogleTodo = () => {};
+export const toogleTodo = () => {};
 
 const deleteTodo = () => {};

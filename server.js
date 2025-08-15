@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import todoRoutes from "./routes/todoRoutes.js";
 
 const app = express();
 const PORT = 3000;
@@ -7,7 +8,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-app.get("/todos/", todoRoutes);
+app.use("/todos", todoRoutes);
 
 app.listen(PORT, () => {
   console.log("The server was started on the port", PORT);
