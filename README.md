@@ -35,8 +35,8 @@ backend/
 | ------ | ---------- | -------------------------- |
 | GET    | /todos     | Get all todos              |
 | POST   | /todos     | Add a new todo             |
-| PATCH  | /todos/:id | Toggle todo as done/undone |
-| DELETE | /todos/:id | Delete a todo              |
+| PATCH  | /todos/:id/toogle | Toggle todo as done/undone |
+| DELETE | /todos/:id        | Delete a todo              |
 
 ---
 
