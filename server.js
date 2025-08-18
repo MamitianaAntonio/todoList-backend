@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/todos", todoRoutes);
+app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log("The server was started on the port", PORT);
